@@ -8,8 +8,9 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>xeneo-plugin-manager</name>
-    <url>http://maven.apache.org</url>
+    <name>XENEO Plugin Manager</name>
+    <description>XENEO Plugin Manager is responsible for the whole plugin lifecycle.</description>
+    <url>http://xeneo.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -93,5 +94,19 @@
             </plugin>
         </plugins>
     </build>
+    
+        <repositories>
+        <repository>
+            <id>xeneo-snap</id>
+            <url>http://www.wi.fh-kufstein.ac.at:40700/nexus/content/repositories/xeneo/</url>
+        </repository>
+    </repositories>
+    
+    <distributionManagement>
+        <snapshotRepository>
+            <id>xeneo-snap</id>
+            <url>http://www.wi.fh-kufstein.ac.at:40700/nexus/content/repositories/xeneo/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>

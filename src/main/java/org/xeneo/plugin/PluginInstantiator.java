@@ -4,13 +4,10 @@
  */
 package org.xeneo.plugin;
 
-import java.util.logging.Level;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.TaskScheduler;
 import org.xeneo.core.plugin.*;
 
 /**

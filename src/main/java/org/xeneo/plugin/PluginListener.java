@@ -47,6 +47,7 @@ public class PluginListener implements BundleContextAware, BundleListener {
 
             if (pluginURI != null) {
                 PluginDescriptor pd = new PluginDescriptor();
+                pd.setPluginURI(pluginURI);
                 pd.setTitle(d.get("Bundle-Name"));
                 pd.setDescription(d.get("Bundle-Description"));
                 pd.setID(b.getBundleId());
@@ -66,9 +67,11 @@ public class PluginListener implements BundleContextAware, BundleListener {
             Bundle b = be.getBundle();
             Dictionary<String, String> d = b.getHeaders();
             String pluginURI = d.get(PluginDescriptor.PLUGIN_URI);           
-            pm.deactivatePlugin(pluginURI);
             
-            logger.info("Plugin with URI: " + pluginURI + " was unistalled and therefore deactivated.");
+            if (pluginURI != null && !pluginURI.isEmpty()) {
+                pm.deactivatePlugin(pluginURI);            
+                logger.info("Plugin with URI: " + pluginURI + " was unistalled and therefore deactivated.");
+            }
         }
     }
 }
